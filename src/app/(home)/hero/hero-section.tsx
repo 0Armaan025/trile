@@ -14,7 +14,19 @@ const gramatikaFont = localFont({ src: "./gramatika.ttf" });
 export const HeroSection = () => {
     return (
         <>
-            <Image src="/arrow.png" alt="arrow" height={40} width={95} className="rotate-280 relative top-74 left-60 z-99 " />
+
+            <Image
+                src="/arrow.png"
+                alt="arrow"
+                height={40}
+                width={95}
+                className="absolute top-[38%] left-[19%] rotate-[280deg] z-[99]
+               md:top-[29%] md:left-[25%]
+               lg:top-[22%] lg:left-[30%]"
+            />
+
+
+
 
 
             {/* Sparkles locked in place, not floating like your GPA */}
@@ -24,7 +36,7 @@ export const HeroSection = () => {
                 color="#65c47b"
             />
             <Sparkle
-                className="absolute top-[60%] left-[80%] md:top-[52%] md:left-[75%]"
+                className="absolute top-[60%] left-[80%] md:top-[54%] md:left-[75%]"
                 color="#f2cc73"
             />
             <Sparkle
@@ -86,6 +98,7 @@ export const HeroSection = () => {
                     <input type="button" value="Try it for free" className={`${gramatikaFont.className} text-sm cursor-pointer hover:bg-[#e9e9e9] transition-all font-semibold w-32 mt-8 text-black h-10 rounded-2xl border-black text-center bg-[#f8f9f8]`} />
                     <h4 className="text-[#b3b3b3] underline mt-2 cursor-pointer">See how it works</h4>
                 </div>
+                <FeatureCard index={1} title="hi" url="/logo.svg" />
 
 
 
@@ -124,3 +137,43 @@ const LinkComponent = () => {
         </div>
     );
 };
+
+
+interface FeatureCardProps {
+    title: string;
+    url: string;
+    index: number;
+}
+
+const FeatureCard = ({ title, url, index }: FeatureCardProps) => {
+    return (
+        <div className="w-40 h-32 flex flex-col justify-center items-center rounded-t-2xl bg-gradient-to-b from-[#29545f] to-[#181a19]">
+            <Image src={url} alt="some image" height={40} width={40} className="w-40 h-40 mt-[-20]" />
+            <h2 className={`${gramatikaFont.className} text-white text-2xl font-semibold`}>{title}</h2>
+
+            <StarsComponent />
+        </div>
+
+    );
+}
+
+const StarsComponent = () => {
+    return (
+        <>
+            <div className="flex flex-row">
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <svg
+                        key={index}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        className="w-6 h-6 text-yellow-400"
+                    >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                ))}
+            </div>
+
+        </>
+    );
+}
