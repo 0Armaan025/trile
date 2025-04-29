@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'cdn-icons-png.flaticon.com',
 
       },
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+
+      },
     ],
   },
 };

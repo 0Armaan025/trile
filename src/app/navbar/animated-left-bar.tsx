@@ -39,7 +39,7 @@ export const AnimatedLeftBar = ({ children, isOpen = false, setIsOpen }: Props) 
     return (
         <>
 
-            <AnimatePresence>
+            <AnimatePresence >
                 {isOpen && (
                     <motion.div
                         ref={sidebarRef}
@@ -47,7 +47,7 @@ export const AnimatedLeftBar = ({ children, isOpen = false, setIsOpen }: Props) 
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -300, opacity: 0 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className="animated-left-bar min-h-screen max-w-[25rem] w-[14rem] flex flex-col justify-start items-start bg-white dark:bg-gray-800 p-2 rounded-r-lg fixed top-0 left-0 z-50"
+                        className="animated-left-bar min-h-screen z-[10000] max-w-[25rem] w-[14rem] flex flex-col justify-start items-start bg-white dark:bg-gray-800 p-2 rounded-r-lg fixed top-0 left-0 z-50"
                     >
                         <div className="w-full flex flex-row justify-end items-end">
                             <XIcon onClick={() => setIsOpen(false)} className="cursor-pointer" />
