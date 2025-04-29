@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { AnimatedLeftBar } from './navbar/animated-left-bar'
+import { AnimatedLeftBar } from '../navbar/animated-left-bar'
 import { HeroSection } from './hero/hero-section';
 
 type Props = {}

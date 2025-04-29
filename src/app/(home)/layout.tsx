@@ -1,4 +1,4 @@
-import { Navbar } from "./navbar/navbar";
+
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -7,8 +7,12 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <main>
-            <Navbar />
-            {children}
+
+            <div className="min-h-screen">
+
+                {children}
+            </div>
+
         </main>
     );
 }
