@@ -1,28 +1,50 @@
+"use client";
 import { Inter } from "next/font/google";
 import { LeftSideBar } from "./left-side-bar";
-import { TasksRow } from "./tasks-row";
+import { useState } from "react";
+
 
 const interFont = Inter({
     subsets: ["latin"],
 });
 
+
+
 const DashboardPage = () => {
+
+
+    const [selectedItem, setSelectedItem] = useState("Projects");
+
+    const onItemChange = (item: string) => {
+        setSelectedItem(item);
+    }
+
+
     return (
-        <div className="dashboardPage flex flex-col md:flex-row  min-h-screen">
-            <LeftSideBar />
-            <div className="content w-full px-4 md:ml-4 flex flex-col">
-                <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-row md:flex-row min-h-screen bg-gray-900 text-white">
+            <LeftSideBar onChangeItem={onItemChange} />
+            <div className="w-full flex-1 p-3 md:p-6 overflow-hidden">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-8">
                     <div className="flex flex-col justify-start items-start">
-                        <h4 className={`font-semibold text-2xl mt-4 ${interFont.className}`}>Welcome back, Armaan</h4>
-                        <h5 className={`text-gray-400 ${interFont.className}`}>May 1, 2025</h5>
+                        <h4 className={`font-semibold text-xl md:text-2xl ${interFont.className}`}>
+                            Welcome back, Armaan
+                        </h4>
+                        <h5 className={`text-gray-400 text-sm ${interFont.className}`}>
+                            May 1, 2025
+                        </h5>
                     </div>
+
                 </div>
-                <div className="flex flex-col w-full justify-center items-center">
-                    <TasksRow />
+                <div className="w-full">
+                    {selectedItem == "Projects" && (
+                        <>
+                            projects
+                        </>
+                    )}
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default DashboardPage;
