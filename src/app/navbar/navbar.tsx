@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { useState } from "react";
 import { AnimatedLeftBar } from "./animated-left-bar";
+import Link from "next/link";
 
 interface NavbarItemProp {
     title: string;
@@ -38,7 +39,7 @@ export const Navbar = () => {
         <nav className="flex flex-row justify-between items-center p-2 px-4">
             <div className="left-part items-center flex flex-row">
 
-                <Image src="/logo.svg" alt="logo" height={40} width={180} />
+                <Link href="/"><Image src="/logo.svg" alt="logo" height={40} width={180} /></Link>
                 <Tally1 color="gray" className="hidden md:flex ml-8" height={30} width={30} />
 
 
