@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google";
 import { LeftSideBar } from "./left-side-bar";
 import { useState } from "react";
+import { ProjectsComponent } from "./projects-component";
 
 
 const interFont = Inter({
@@ -38,7 +39,13 @@ const DashboardPage = () => {
                 <div className="w-full">
                     {selectedItem == "Projects" && (
                         <>
-                            projects
+                            <ProjectsComponent />
+                        </>
+                    )}
+
+                    {selectedItem == "Messages" && (
+                        <>
+                            hi im msgses
                         </>
                     )}
                 </div>
@@ -46,5 +53,6 @@ const DashboardPage = () => {
         </div>
     );
 };
+
 
 export default DashboardPage;

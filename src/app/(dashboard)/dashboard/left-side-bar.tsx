@@ -13,10 +13,7 @@ const SideBarItems = [
         logo: "https://cdn-icons-png.flaticon.com/128/1632/1632670.png",
         title: "Projects"
     },
-    {
-        title: "Teams",
-        logo: "https://cdn-icons-png.flaticon.com/128/19003/19003339.png"
-    },
+
     {
         title: "Messages",
         logo: "https://cdn-icons-png.flaticon.com/128/1041/1041916.png"
